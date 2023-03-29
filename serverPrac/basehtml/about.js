@@ -2,17 +2,21 @@ import tagMakeCall from "../modules/tagMakeCall.js"
 
 
 const root = document.getElementById('root')
+
+//root 자식
 const rootChild = ['header','main','footer']
 const users = [];
 
 for(let i=0 ; i<rootChild.length;i++){
   tagMakeCall(root, rootChild[i],function(element){
     element.style.border = '2px solid blue'
-    element.style.width = '40vw'
-    element.style.height = '25vh'
+    element.style.width = '20vw'
+    element.style.height = '30vh'
   })
 }
 
+
+//index.html로 되돌아가는 버튼구현
 tagMakeCall(root,'form',function(element){
   element.setAttribute('action','/')
   element.setAttribute('id','about-form')
@@ -26,6 +30,8 @@ tagMakeCall(aboutForm,'input',function(element){
   element.setAttribute('id','about-btn')
 })
 
+
+//header에 form형식으로 받아오기
 const header = document.querySelector('header')
 const main = document.querySelector('main')
 const footer = document.querySelector('footer')
@@ -59,6 +65,7 @@ for(let i=0;i<divInnerText.length;i++){
 
 tagMakeCall(prologUsers,'button',function(element){
   element.setAttribute('type','submit')
+  element.setAttribute('id','if-btn')
   element.innerText = '버튼을 누르시오'
   })
 
